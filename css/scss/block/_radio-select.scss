@@ -1,0 +1,15 @@
+.radio-select{
+    display: none;
+
+};
+
+
+.radio-select:checked + .method {
+    opacity: 1;
+    color: $color-second;
+};
+
+.radio-select:checked + .option {
+    opacity: 1;
+    color: $color-second;
+};

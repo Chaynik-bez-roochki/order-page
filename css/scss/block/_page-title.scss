@@ -1,0 +1,11 @@
+.page-title{
+    color: $color-prime;
+    margin-left: 10px;
+    margin-bottom: 20px;
+};
+
+@media(max-width: 869px){
+    .page-title{
+        margin-top: 280px;
+    };
+};
