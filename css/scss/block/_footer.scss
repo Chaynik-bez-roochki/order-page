@@ -1,0 +1,90 @@
+.footer{
+    background-color: $color-footer;
+    font-family: $prim-font;
+    color: $color-prime;
+    font-size: 16px;
+    font-weight: 400;
+
+
+};
+
+.sale-wrapper{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    span{
+        margin-bottom: 10px;
+    };
+};
+
+.sale{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    input{
+        width: 250px;
+    };
+    input.error {
+        outline: none;
+        border: 1px solid $prim_color;
+    }
+    input.error:focus {
+        outline: none;
+        border: 1px solid $prim_color;
+    }
+    input:focus {
+        outline: none;
+        border: 1px solid $color-second;
+    };
+};
+
+.btn-sale{
+    background-color: $color-btn;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-family: $prim-font;
+    color: $color-prime;
+    font-size: 16px;
+    font-weight: 500;
+};
+
+.btn-sale:hover{
+    background-color: $color-second;
+    color: $color-on-accent;
+};
+
+.down{
+    position: relative;
+    svg {
+        width: 100%;
+        position: absolute;
+        top: 0;
+    };
+};
+
+@media(max-width: 869px){
+    .sale{
+        input{
+            font-size: 18px
+        };
+    };
+};
+
+@media(max-width: 619px){
+    .sale{
+        flex-direction: column;
+        input{
+            font-size: 18px
+        };
+    };
+};

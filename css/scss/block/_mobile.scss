@@ -1,0 +1,16 @@
+
+.cityAll, .warehousesAll{
+    border-radius: 1px;
+    border: 1px solid $color-border;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: auto;
+    padding-left: 5px;
+    li{
+        list-style-type: none;
+        cursor: pointer;
+        max-width: fit-content;
+    };
+};

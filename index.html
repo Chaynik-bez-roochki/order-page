@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        input, select, option {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;}
+    </style>
+</head>
+<body >
+    <header>
+        <div class="wrapper-header">
+            <span>ДОСТАВЛЯЕМ, БЕЖИМ,<br>ВОЛОСЫ НАЗАД ...</span>
+        </div>
+        <svg viewBox="0 0 1440 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 49V123H1440V49C1440 49 1172.5 160.5 720 49.5C267.5 -61.5 0 49 0 49Z" fill="white"/>
+        </svg>
+        <svg class="svg-but" viewBox="0 0 1440 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 49V123H1440V49C1440 49 1172.5 160.5 720 49.5C267.5 -61.5 0 49 0 49Z" />
+            </svg>
+    </header>
+    
+    <div class="wrapper">
+        <div class="page-title"><h1>Оформление заказа</h1></div>
+        <div class="order-card">
+            <div class="cheque">
+                <div class="head">Ваш заказ</div>
+                <div class="row">
+                    <span>Товары....................................</span>
+                    <div class="summ" >
+                        <span id="cost"></span><h4>&nbsp;₴</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <span>Доставка................................</span>
+                    <div class="summ" >
+                        <span id="deliveryCheck"></span><h4>&nbsp;₴</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <span>Скидка....................................</span>
+                    <div class="summ" >
+                        <span id="sale"></span><h4>&nbsp;₴</h4>
+                    </div>
+                </div>
+                
+                <p class="total-title">Итого</p>
+                <div class="total" >
+                    <span id="tax"></span><h4>&nbsp;₴</h4>
+                </div>
+                
+                <button type="submit" class="btn-checkout" form="formOne">Оформить заказ</button>
+
+
+            </div>
+        </div>
+        <form name="formOne" class="personal-data" id="formOne" action="" onkeypress="if(event.keyCode == 13) return false;" novalidate>
+        <h2>Данные получателя</h2>
+        <label for="lastName">Фамилия <span class="required-field">*</span></label>
+        <div class="tooltip">
+        <input type="text" name="lastName" id="lastName" class="mandatory" placeholder="Фамилия" data-reg="^[А-Яа-яЁёЇїІіЄєҐґ']+$" autocomplete="off" value="">
+            <span class="tooltiptext tooltipActiv" style="display: none;">Tooltip text</span>
+        </div>
+        <label for="firstName">Имя <span class="required-field">*</span></label>
+        <div class="tooltip">
+        <input type="text" name="firstName" id="firstName" class="mandatory" placeholder="Имя" data-reg="^[А-Яа-яЁёЇїІіЄєҐґ']+$" autocomplete="off">
+            <span class="tooltiptext tooltipActiv" style="display: none;">Tooltip text</span>
+        </div>
+        <label for="secondName">Отчество</label>
+        <div class="tooltip">
+        <input type="text" name="secondName" id="secondName" placeholder="Отчество" data-reg="^[А-Яа-яЁёЇїІіЄєҐґ']+$" autocomplete="off">
+            <span class="tooltiptext tooltipActiv" style="display: none;">Tooltip text</span>
+        </div>
+        <label for="phone">Номер телефона <span class="required-field">*</span></label>
+        <div class="tooltip">
+        <input type="tel" name="phone" id="phone" class="mandatory" placeholder="Телефон в формате: +38 ххх ххх хх хх" data-reg="^((\+38|38|8)+([0-9]){10})$" autocomplete="off">
+            <span class="tooltiptext tooltipActiv" style="display: none;">Tooltip text</span>
+        </div>
+        <label for="email">e-mail</label>
+        <div class="tooltip">
+        <input type="email" name="email" id="email" placeholder="e-mail" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" autocomplete="off">
+            <span class="tooltiptext tooltipActiv" style="display: none;">Tooltip text</span>
+        </div>
+        <p>Внимание! Поля, отмеченные <span class="required-field">*</span>, обязательны для заполнения.</p>
+
+        </form>
+        <div class="payment-methods radioBox" >
+            <div class="tooltip-method">
+                <h2>Способ оплаты</h2>
+                <span class="tooltiptext-method tooltipActiv" id="payment-tooltip" style="display: none;">Выберите способ оплаты</span>
+            </div>
+            <div class="methods">
+                <input type="radio" name="payment" class="radio-select" id="payment-1" form="formOne" value="оплата при получении">
+                <label class="method" for="payment-1">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/payment-upon-receipt.png">
+                    <source media="(max-width: 869px)" srcset="./img/icons/payment-upon-receipt-96.png">
+                    <img src="./img/icons/payment-upon-receipt.png">
+                    </picture>
+                    <span>оплата при получении</span>
+                </label>
+                <input type="radio" name="payment" class="radio-select" id="payment-2" form="formOne" value="оплата на сайте">
+                <label class="method" for="payment-2">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/payment-on-site.png">
+                    <source media="(max-width: 869px)" srcset="./img/icons/payment-on-site-96.png">
+                    <img src="./img/icons/payment-on-site.png">
+                    </picture>
+                    <span>оплата на сайте</span>
+                </label>
+                <input type="radio" name="payment" class="radio-select" id="payment-3" form="formOne" value="банковский перевод">
+                <label class="method" for="payment-3">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/bank-transfer.png">
+                    <source media="(max-width: 869px)" srcset="./img/icons/bank-transfer-96.png">
+                    <img src="./img/icons/bank-transfer.png">
+                    </picture>
+                    <span>банковский перевод</span>
+                </label>
+            </div>
+            <div class="method-discript" id="method-discript" style="display: none ">
+                пояснение по процентам
+            </div>
+        </div>
+        <div class="delivery-methods radioBox" >
+            <div class="tooltip-method">
+                <h2>Способ доставки</h2><span class="tooltiptext-method tooltipActiv" id="delivery-tooltip" style="display: none;">Выберите способ доставки</span>
+            </div>
+            <div class="options">
+                <input type="radio" name="delivery" class="radio-select" id="delivery-1" form="formOne" value="самовывоз">
+                <label class="option" for="delivery-1">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/pickup.png">
+                    <source media="(max-width: 869px)" srcset="./img/icons/pickup-96.png">
+                    <img src="./img/icons/pickup.png">
+                    </picture>
+                    <span>самовывоз</span>
+                </label>
+                <input type="radio" name="delivery" class="radio-select" id="delivery-2" form="formOne" value="нова пошта">
+                <label class="option" for="delivery-2">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/NP-logo.svg">
+                    <source media="(max-width: 869px)" srcset="./img/icons/NP-logo-120.svg">
+                    <img src="./img/icons/NP-logo.svg">
+                    </picture>
+                </label>
+                <input type="radio" name="delivery" class="radio-select" id="delivery-3" form="formOne" value="укрпошта">
+                <label class="option" for="delivery-3">
+                    <picture>
+                    <source media="(max-width: 619px)" srcset="./img/icons/UP-logo.svg">
+                    <source media="(max-width: 869px)" srcset="./img/icons/UP-logo-120.svg">
+                    <img src="./img/icons/UP-logo.svg">
+                    </picture>
+                </label>
+            </div>
+            <div class="option-discript" id="option-discript" style="display: none ">
+                
+            </div>
+        </div>
+        <div class="delivery-adress" id="adressForm" style="display: none ;" >
+            <h2>Адрес доставки</h2>
+            <div class="outAdress">
+                <span  class="out" id="outCity" ></span>
+                <span class="out " id="outWarehouses"></span>
+                <input type="hidden" name="outCity" form="formOne" value="" >
+                <input type="hidden" name="outWarehouses" form="formOne" value="" >
+            </div>
+        <div class="form-group delivery-np mobile" id="delivery-np" style="display: block ;">
+            <div class="search">
+                <div class="tooltip-search">
+                    <span class="tooltiptext-city tooltipActiv" id="tooltiptext-city" style="display: none;"></span>
+                </div>
+              <input type="text" placeholder="Ваш город" id="citySearch" >
+            </div>
+            <form name="citySearchForm" class="citySearchForm">
+              <div class="select-wrapper">
+              <ul class="cityAll" id="cityAll">
+                    <li value="000">-- Выберете город00 --</option>
+
+              </ul>
+              </div>
+            </form>
+            <div class="search_warehouses">
+                <div class="tooltip-search">
+                    <span class="tooltiptext-warehouses tooltipActiv" id="tooltiptext-warehouses" style="display: none;"></span>
+                </div>
+              <input type="text" placeholder="Введите адрес отделения" id="warehousesSearch" >
+            </div>
+            <form name="warehousesSearchForm">
+              <div class="select-wrapper">
+                <ul class="warehousesAll" id="warehousesAll">
+                    <li value="000">-- Выберете отделение --</li>
+                </ul>
+                </div>
+            </form>
+          </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="sale-wrapper">
+            <span><h3>Хочешь получать актуальные скидки ? </h5></span>
+                <span> Подпишись на нашу рассылку</span>
+            <form name="sale" class="sale" id="saleF" method="#">
+                <img src="./img/icons/sale.png">
+                <div class="tooltip">
+                <input type="email" name="email" id="email-sale" placeholder="Ваш e-mail" data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$" autocomplete="off">
+                    <span class="tooltiptext-footer" id="sale-tooltip" style="display: none;">Tooltip text</span>
+                </div>
+                <button class="btn-sale" type="submit" >Подписаться</button>
+            </form>
+        </div>
+        <div class="down">
+            <svg  viewBox="0 0 1440 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="1444" height="300" fill="#579407"/>
+                <path d="M0 225.963V299.963H1440V225.963C1440 225.963 1172.5 337.463 720 226.463C267.5 115.463 0 225.963 0 225.963Z" fill="#40382D"/>
+                <path d="M922.774 223.772C923.593 224.366 924.613 224.679 925.653 224.654C926.692 224.629 927.682 224.268 928.446 223.637L929.059 223.23L925.731 266.996C925.646 268.111 926.053 269.219 926.862 270.074C927.672 270.929 928.817 271.462 930.046 271.556L937.723 272.139C938.282 272.182 938.843 272.124 939.374 271.968C939.905 271.813 940.395 271.563 940.816 271.234C941.238 270.904 941.582 270.501 941.83 270.048C942.078 269.594 942.224 269.1 942.259 268.592L944.151 243.723C944.334 241.38 945.534 239.213 947.487 237.697C949.44 236.181 951.987 235.44 954.568 235.636L959.928 236.044C962.505 236.245 964.905 237.364 966.602 239.157C968.298 240.95 969.154 243.271 968.982 245.611L967.091 270.481C967.049 270.988 967.119 271.499 967.295 271.984C967.471 272.47 967.751 272.92 968.118 273.31C968.485 273.699 968.931 274.02 969.433 274.254C969.934 274.488 970.48 274.63 971.038 274.673L1020.1 278.404C1020.71 278.45 1021.32 278.387 1021.9 278.218C1022.48 278.05 1023.01 277.779 1023.47 277.421C1023.93 277.063 1024.31 276.625 1024.58 276.132C1024.85 275.639 1025.01 275.101 1025.06 274.549L1028.38 230.783L1029.14 231.577C1029.5 231.956 1029.93 232.267 1030.42 232.493C1030.92 232.72 1031.45 232.856 1031.99 232.896C1032.54 232.936 1033.09 232.878 1033.61 232.725C1034.12 232.572 1034.6 232.327 1035.01 232.005C1035.42 231.683 1035.76 231.289 1036 230.847C1036.24 230.404 1036.39 229.921 1036.42 229.426C1036.46 228.93 1036.39 228.432 1036.21 227.959C1036.04 227.486 1035.76 227.048 1035.4 226.669L993.476 182.41C990.684 179.466 986.737 177.631 982.501 177.309C978.265 176.987 974.085 178.203 970.88 180.691L922.748 218.103C922.305 218.452 921.951 218.885 921.71 219.371C921.468 219.858 921.344 220.387 921.347 220.924C921.349 221.461 921.478 221.993 921.724 222.484C921.97 222.975 922.328 223.414 922.774 223.772ZM1000.69 239.144C1000.69 239.114 1000.71 239.086 1000.73 239.067C1000.76 239.047 1000.79 239.038 1000.82 239.04L1006.91 239.503C1008.01 239.586 1009.03 240.062 1009.75 240.826C1010.47 241.589 1010.84 242.578 1010.76 243.574L1010.34 249.078C1010.34 249.108 1010.33 249.135 1010.3 249.155C1010.28 249.174 1010.24 249.184 1010.21 249.181L1000.11 248.413C1000.08 248.411 1000.05 248.396 1000.03 248.374C1000.01 248.351 999.994 248.321 999.996 248.291L1000.69 239.144ZM999.692 252.292C999.695 252.262 999.71 252.234 999.735 252.215C999.76 252.196 999.792 252.186 999.825 252.189L1009.92 252.957C1009.94 252.958 1009.96 252.962 1009.97 252.969C1009.98 252.976 1010 252.985 1010.01 252.996C1010.02 253.008 1010.03 253.021 1010.03 253.035C1010.04 253.049 1010.04 253.064 1010.04 253.079L1009.61 258.714C1009.53 259.71 1009.03 260.633 1008.2 261.278C1007.37 261.923 1006.28 262.239 1005.19 262.156L999.102 261.693C999.069 261.691 999.039 261.676 999.017 261.653C998.995 261.631 998.984 261.601 998.987 261.571L999.692 252.292ZM985.922 241.799C985.997 240.802 986.506 239.88 987.336 239.235C988.165 238.589 989.248 238.273 990.346 238.357L996.409 238.818C996.442 238.82 996.472 238.835 996.494 238.857C996.516 238.88 996.527 238.91 996.524 238.94L995.827 248.106C995.825 248.136 995.81 248.164 995.785 248.183C995.76 248.203 995.727 248.212 995.695 248.21L985.617 247.443C985.601 247.442 985.585 247.438 985.57 247.431C985.556 247.424 985.543 247.415 985.532 247.404C985.521 247.392 985.513 247.379 985.508 247.365C985.503 247.351 985.501 247.336 985.502 247.321L985.922 241.799ZM985.207 251.19C985.209 251.176 985.213 251.161 985.22 251.148C985.227 251.135 985.237 251.123 985.25 251.114C985.262 251.104 985.276 251.097 985.292 251.092C985.307 251.088 985.324 251.086 985.34 251.087L995.438 251.855C995.471 251.858 995.502 251.872 995.523 251.895C995.545 251.918 995.556 251.947 995.554 251.977L994.857 261.144C994.854 261.173 994.839 261.201 994.814 261.221C994.789 261.24 994.757 261.249 994.724 261.247L988.64 260.784C987.543 260.701 986.52 260.225 985.798 259.461C985.075 258.698 984.712 257.709 984.787 256.713L985.207 251.19Z" fill="#40382D"/>
+                <path d="M762.155 239.953L765.55 217.195C762.904 217.729 760.161 217.811 757.33 217.389C743.974 215.397 734.883 203.118 736.876 189.763C737.888 182.978 741.467 177.286 746.715 173.591C745.917 170.523 745.7 167.214 746.202 163.848C748.195 150.493 760.473 141.402 773.828 143.394C782.162 144.637 788.897 150.011 792.268 157.067C792.696 157.131 793.123 157.195 793.604 157.266C797.462 157.842 801.17 159.172 804.514 161.18C807.859 163.189 810.775 165.836 813.097 168.971C815.418 172.107 817.099 175.669 818.044 179.454C818.989 183.239 819.179 187.173 818.603 191.032C818.028 194.89 816.698 198.598 814.689 201.942C812.681 205.287 810.034 208.203 806.898 210.524C803.763 212.846 800.201 214.527 796.416 215.472C792.631 216.417 788.696 216.607 784.838 216.031C782.167 215.633 779.551 214.86 776.992 213.714L772.84 241.547L762.155 239.953Z" fill="#40382D"/>
+                <ellipse cx="263.5" cy="108.5" rx="30.5" ry="56.5" fill="#40382D"/>
+                <rect x="258" y="146" width="11" height="38" fill="#40382D"/>
+                <rect x="1191.92" y="243.513" width="10.216" height="35.2917" transform="rotate(-5.83763 1191.92 243.513)" fill="#40382D"/>
+                <ellipse cx="1193" cy="208.394" rx="52.9375" ry="52.4731" transform="rotate(-5.83763 1193 208.394)" fill="#40382D"/>
+                <g clip-path="url(#clip0_1156_141)">
+                <path d="M593.462 123.562L540.811 115.136L537.571 135.387L590.222 143.812L593.462 123.562Z" fill="#FFCE56" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M504.635 159.092C506.543 154.514 507.637 151.57 512.446 150.361L539.78 142.517L553.715 127.636C555.347 125.894 564.539 124.61 566.44 126.054C566.44 126.054 574.816 159.212 575.099 159.626L567.134 189.446L567.07 189.39C561.65 184.538 562.158 173.259 564.009 166.224L565.411 160.894L556.988 144.131C556.988 144.131 544.726 150.625 544.05 150.876L504.635 159.092Z" fill="#40382D" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M572.524 135.837C571.798 136.968 570.686 137.797 569.395 138.171C568.103 138.544 566.72 138.436 565.503 137.866L556.775 134.039C555.8 133.634 554.929 133.016 554.223 132.231C553.518 131.446 552.996 130.514 552.696 129.502C552.396 128.491 552.326 127.425 552.49 126.382C552.654 125.34 553.048 124.347 553.644 123.476L567.269 104.564C567.832 103.784 568.542 103.121 569.361 102.615C570.179 102.109 571.089 101.77 572.039 101.615C572.989 101.461 573.96 101.495 574.896 101.716C575.833 101.937 576.716 102.34 577.497 102.903V102.903C580.369 104.972 582.352 108.051 583.049 111.521C583.745 114.992 583.104 118.597 581.253 121.614L572.524 135.837Z" fill="white" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M580.695 106.103L589.641 121.354L601.562 124.858L600.59 130.933L587.506 129.485C586.928 129.464 586.36 129.321 585.842 129.065C585.323 128.809 584.864 128.446 584.495 128L574.344 115.796" fill="white"/>
+                <path d="M580.695 106.103L589.641 121.354L601.562 124.858L600.59 130.933L587.506 129.485C586.928 129.464 586.36 129.321 585.842 129.065C585.323 128.809 584.864 128.446 584.495 128L574.344 115.796" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M585.12 84.8427C587.268 85.1865 589.192 86.3696 590.468 88.1317C591.744 89.8939 592.268 92.0907 591.924 94.239L589.98 106.389L581.883 105.094C580.819 104.923 579.798 104.545 578.88 103.98C577.962 103.416 577.165 102.676 576.533 101.803C575.901 100.93 575.447 99.9414 575.197 98.893C574.947 97.8447 574.906 96.7574 575.076 95.6932L575.724 91.6466C576.067 89.4983 577.25 87.5746 579.013 86.2986C580.775 85.0226 582.972 84.4989 585.12 84.8427V84.8427Z" fill="#FFDED5" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M604.64 131.581L616.79 133.525" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M543.664 186.207L588.52 193.385C589.035 190.162 590.81 187.277 593.453 185.363C596.096 183.449 599.392 182.663 602.614 183.179L610.556 133.204" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M534.897 191.034C538.252 191.571 541.407 189.287 541.944 185.931C542.481 182.576 540.196 179.421 536.841 178.884C533.486 178.347 530.331 180.632 529.794 183.987C529.257 187.342 531.542 190.497 534.897 191.034Z" fill="#40382D" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M601.723 201.728C605.078 202.265 608.233 199.98 608.77 196.625C609.307 193.27 607.022 190.115 603.667 189.578C600.312 189.041 597.157 191.326 596.62 194.681C596.083 198.036 598.367 201.191 601.723 201.728Z" fill="#40382D" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M601.562 124.858L606.625 125.668C607.43 125.797 608.152 126.24 608.63 126.901C609.109 127.562 609.305 128.386 609.176 129.191C609.047 129.997 608.604 130.718 607.943 131.197C607.282 131.675 606.458 131.872 605.653 131.743L600.59 130.933L601.562 124.858Z" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M562.925 93.7524L538.625 89.8638" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M541.055 100.637L524.855 98.0446" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M530.525 88.5676L518.375 86.6233" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M518.536 111.572L532.711 113.84" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M512.461 110.6L504.361 109.303" stroke="#40382D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1156_141">
+                <rect width="131.251" height="131.251" fill="white" transform="translate(505.739 61.7556) rotate(9.09149)"/>
+                </clipPath>
+                </defs>
+                </svg>
+        </div>
+    </div>
+    <div id="popup" class="popup" style="display: none;">
+        <div class="popup__body">
+            <div class="popup__content" id="popup__content">
+                <div class="popup__close" id="popup__close"> <img src="./img/popup-closed.png" alt=""></div>
+                <div class="popup__text-content" style="background-image: none ;">
+                    <div class="popup__title" id="popup__title"></div>
+                   <div class="popup__text" id="popup__text"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/actions.js"></script>
+    <script src="./js/citymobile.js"></script>
+    <script src="./js/getwarehousesmobile.js"></script>
+    <script src="./js/validation.js"></script>
+
+</body>
+</html>

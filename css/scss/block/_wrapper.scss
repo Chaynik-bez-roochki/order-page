@@ -1,0 +1,27 @@
+.wrapper{
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: start;
+};
+.wrapper-header{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+   };
+
+@media(max-width: 869px){
+    .wrapper{
+        align-items: center;
+    };
+};
+

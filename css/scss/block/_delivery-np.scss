@@ -1,0 +1,101 @@
+
+.delivery-adress{
+    // display: none;
+    width: 100%;
+    max-width: 400px;
+    font-family: $prim-font;
+    color: $color-prime;
+    padding: 0px 10px;
+    display: block;
+    h2{
+        text-align: center;
+    };
+};
+
+.outAdress{
+    text-align: center;
+    width: 100%;
+    min-height: 20px;
+    max-width: 400px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    padding: auto 20px;
+    background-color: $color-footer;
+    border-radius: 2px;
+    span{
+        font-family: $prim-font;
+        color: $color-prime;
+         font-weight: 500;
+        font-size: 15px;
+    };
+};
+
+.cityAll, .warehousesAll{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+.cityAll, .warehousesAll::-ms-expand {
+    display: none;
+}
+.form-group {
+    width: 100%;
+    max-width: 400px;
+
+
+
+    .search, .search_warehouses{
+        margin-top: 35px;
+      input{
+        width: 100%;
+      }
+    }
+}
+.select-wrapper{
+margin-top: 10px;
+margin-bottom: 30px;
+select{
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance:none;
+};
+}
+
+
+@media(max-width: 869px){
+    .delivery-np{
+        width: 100%;
+    };
+
+    .delivery-adress{
+        max-width: 500px;
+    };
+
+    .form-group {
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        .search, .search_warehouses{
+        
+          input{
+            width: 100%;
+            font-size: 18px;
+          };
+        };
+    };
+    .select-wrapper{
+        margin-top: 20px;
+        padding: 0px 0px;
+        margin-bottom: 50px;
+        };
+    .cityAll, .warehousesAll{
+            font-size: 18px;
+        };
+    .outAdress{
+    max-width: 500px;
+    span{
+        font-size: 20px;
+    };
+};
+};

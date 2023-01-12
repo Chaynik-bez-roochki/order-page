@@ -1,0 +1,35 @@
+header {
+    height: 250px;
+    position: relative;
+    background-image: url("../img/header-bg-img.png");
+    background-repeat: no-repeat;
+    background-position: 85% 0%;
+    background-color: $color-second;
+    .wrapper-header span{
+        margin-top: 20px;
+        padding-left: 10px;
+        font-weight: 700;
+        font-size: 32px;
+        color:$color-on-accent;
+    };
+};
+svg {
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+    z-index: 1;
+};
+.svg-but{
+    fill: $color-btn;
+    bottom: 6px;
+    z-index: 0;
+    opacity: 80%;
+};
+
+@media(max-width: 869px){
+    header {
+        .wrapper-header span{
+            font-size: 28px;
+        };
+    };
+};

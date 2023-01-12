@@ -1,0 +1,67 @@
+
+.personal-data {
+    font-family: $prim-font;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px;
+    margin-top: 20px;
+    color: $color-prime;
+        label {
+            font-size: 16px;
+            font-weight: 500;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            max-width: 400px;
+        }
+        input.error {
+            outline: none;
+            border: 1px solid $prim_color;
+        }
+        input.error:focus {
+            outline: none;
+            border: 1px solid $prim_color;
+        }
+        input:focus {
+            outline: none;
+            border: 1px solid $color-second;
+        };
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            padding-top: 10px
+        }
+};
+.required-field{
+    color: $color-requiredField;
+    font-weight: 500;
+    font-size: 16px;
+};
+
+@media(max-width: 869px){
+    .personal-data{
+        width: 100%;
+        max-width: calc(100vw - 100px);
+        input {
+            font-size: 18px;
+            max-width: 100%;
+            margin: 5px 0;
+        };
+        h2 {
+            text-align: center
+        };
+        label {
+            font-size: 18px;
+        };
+        p {
+            padding-top: 20px;
+            font-size: 16px;
+        };
+    };
+
+};
